@@ -1,8 +1,7 @@
-== README
+This is a work-in-progress app to store/display information about the records in one's collection.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
+===
+(This is the original Rails default README.)
 Things you may want to cover:
 
 * Ruby version
@@ -26,3 +25,5 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+===
