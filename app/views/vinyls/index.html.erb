@@ -1,0 +1,10 @@
+<h1>Vinyl Collection</h1>
+
+<% Vinyl.all.each do |v| %>
+	<%= v.artist %>
+	<%= v.album %>
+	<%= v.genre %>
+	<%= v.year %>
+<% end %>
+
+<%= link_to "Add Vinyl", new_vinyl_path %>
