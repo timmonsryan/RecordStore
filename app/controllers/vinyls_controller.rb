@@ -8,6 +8,12 @@ class VinylsController < ApplicationController
 	end
 
 	def create
-		@vinyl = Vinyl.new
+		@vinyl = Vinyl.create(vinyl_params)
+		redirect_to(vinyls_path)
+	end
+
+	private
+	def vinyl_params
+		params.require(:vinyl).permit(:album, :artist, :year, :genre)
 	end
 end

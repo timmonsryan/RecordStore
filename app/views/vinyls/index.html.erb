@@ -1,10 +1,14 @@
 <h1>Vinyl Collection</h1>
 
 <% Vinyl.all.each do |v| %>
-	<%= v.artist %>
-	<%= v.album %>
-	<%= v.genre %>
-	<%= v.year %>
+<div id="VinylInfo">
+	<%= v.artist %><br/>
+	<%= v.album %><br/>
+	<%= v.genre %><br/>
+	<%= v.year %><br/>
+</div>
 <% end %>
 
+<div class="BottomLink">
 <%= link_to "Add Vinyl", new_vinyl_path %>
+</div>
