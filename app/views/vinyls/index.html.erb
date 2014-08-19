@@ -6,6 +6,8 @@
 	<%= v.album %><br/>
 	<%= v.genre %><br/>
 	<%= v.year %><br/>
+	<%= link_to 'Delete', v, method: :delete %>
+	<%= link_to 'Edit', edit_vinyl_path(v) %>
 </div>
 <% end %>
 
