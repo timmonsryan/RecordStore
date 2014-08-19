@@ -13,8 +13,12 @@ class VinylsController < ApplicationController
 	end
 
 	def create
-		@vinyl = Vinyl.create(vinyl_params)
-		redirect_to(vinyls_path)
+		@vinyl = Vinyl.new(vinyl_params)
+		if @vinyl.save
+			redirect_to vinyls_path, notice: "Vinyl added."
+		else
+			render 'new', notice: "Vinyl not added."
+		end
 	end
 
 	def edit

@@ -1,4 +1,4 @@
-<h1>Add New Album</h1>
+<h3>Add New Album</h3>
 
 <%= form_for Vinyl.new do |f| %>
 	<%= f.label :artist %>
@@ -15,3 +15,5 @@
 
 	<%= f.submit "Submit" %>
 <% end %>
+
+<%= link_to "Show All Albums", vinyls_path %>

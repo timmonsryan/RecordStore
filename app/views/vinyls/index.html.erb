@@ -1,4 +1,4 @@
-<h1>Vinyl Collection</h1>
+<h3>Vinyl Collection</h3>
 
 <% Vinyl.all.each do |v| %>
 <div id="VinylInfo">
@@ -6,8 +6,9 @@
 	<%= v.album %><br/>
 	<%= v.genre %><br/>
 	<%= v.year %><br/>
-	<%= link_to 'Delete', v, method: :delete %>
-	<%= link_to 'Edit', edit_vinyl_path(v) %>
+	<%= link_to 'Delete', v, method: :delete, confirm: 'Are you sure?' %>
+	<%= link_to 'Edit', edit_vinyl_path(v) %><br/>
+	<%= link_to 'Details', v %>
 </div>
 <% end %>
 

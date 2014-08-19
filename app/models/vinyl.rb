@@ -3,6 +3,4 @@ class Vinyl < ActiveRecord::Base
 	validates :artist, presence: true
 	validates :year, numericality: true
 
-	has_one :artist
-	has_many :songs
 end
