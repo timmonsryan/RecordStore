@@ -1,0 +1,9 @@
+<div id="VinylInfo">
+	<%= v.artist %><br/>
+	<%= v.album %><br/>
+	<%= v.genre %><br/>
+	<%= v.year %><br/>
+	<%= link_to 'Delete', v, method: :delete, confirm: 'Are you sure?' %>
+	<%= link_to 'Edit', edit_vinyl_path(v) %><br/>
+	<%= link_to 'Details', v %>
+</div>

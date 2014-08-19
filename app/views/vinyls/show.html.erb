@@ -5,4 +5,5 @@
 <p>Genre: <%= @vinyl.genre %></p>
 <p>Year: <%= @vinyl.year %></p>
 
-<%= link_to "View All Albums", vinyls_path %>
+<%= link_to "Edit This Album", edit_vinyl_path(params[:id]) %><br/>
+<%= link_to "View Collection", vinyls_path %>

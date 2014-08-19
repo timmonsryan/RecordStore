@@ -1,0 +1,5 @@
+<h3>Vinyls from <%= @vinyl.artist %></h3>
+
+<% @vinyls.each do |vinyl| %>
+	<%= render partial: 'vinyl' %>
+<% end %>

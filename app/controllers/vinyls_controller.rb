@@ -8,6 +8,11 @@ class VinylsController < ApplicationController
 		@vinyl = Vinyl.find(params[:id])
 	end
 
+	def show_artist
+		@vinyl = Vinyl.find(params[:id])
+		@vinyls = Vinyl.where(artist: @vinyl.artist)
+	end
+
 	def new
 		@vinyl = Vinyl.new
 	end

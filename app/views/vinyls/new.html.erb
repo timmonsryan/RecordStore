@@ -11,7 +11,7 @@
 	<%= f.text_field :genre %><br />
 
 	<%= f.label :year %>
-	<%= f.select :year, (1900..Time.now.year).to_a.reverse %><br />
+	<%= f.select :year, (1900..Time.now.year).to_a.reverse, include_blank: "Select Year..." %><br />
 
 	<%= f.submit "Submit" %>
 <% end %>
