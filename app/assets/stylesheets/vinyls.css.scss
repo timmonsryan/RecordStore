@@ -2,17 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#VinylInfo {
+/*#VinylInfo {
 	float: left;
 	display: inline-block;
 	margin: 0 auto;
 	border: 2px solid black;
 	padding: 2px;
 	text-align: center;
+}*/
+
+#VinylInfo {
+	float: left;
+}
+
+#VinylActions {
+	float: right;
 }
 
 #VinylCollection {
-	width: 60%;
+	width: 350px;
 	margin: 0 auto;
 }
 
