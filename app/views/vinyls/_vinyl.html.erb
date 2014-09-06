@@ -4,6 +4,6 @@
 	<%= v.genre %><br/>
 	<%= v.year %><br/>
 	<%= link_to 'Delete', v, method: :delete, confirm: 'Are you sure?' %>
-	<%= link_to 'Edit', edit_vinyl_path(v) %><br/>
-	<%= link_to 'Details', v %>
+	<%= link_to 'Edit', edit_vinyl_path(v), class: "btn" %>
+	<%= link_to 'Details', v, class: "btn" %>
 </div>

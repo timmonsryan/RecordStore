@@ -29,6 +29,11 @@
 	margin: 5px 5px;
 }
 
+h1:hover {
+	text-decoration: none;
+	color: white;
+}
+
 h1 {
 
 	a {
@@ -36,10 +41,22 @@ h1 {
 		color: white;
 	}
 
-	background-color: #BA1B20;
+	background-image: linear-gradient(to bottom, #BA1B20, red);
 	color: white;
 	margin: -5px -5px 5px -5px;
 	padding: 5px;
+	background-color: #da4f49;
+	*background-color: #bd362f;
+  background-image: -moz-linear-gradient(top, #ee5f5b, #bd362f);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ee5f5b), to(#bd362f));
+  background-image: -webkit-linear-gradient(top, #ee5f5b, #bd362f);
+  background-image: -o-linear-gradient(top, #ee5f5b, #bd362f);
+  background-image: linear-gradient(to bottom, #ee5f5b, #bd362f);
+  background-repeat: repeat-x;
+  border-color: #bd362f #bd362f #802420;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffee5f5b', endColorstr='#ffbd362f', GradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
 
 body {
@@ -48,4 +65,8 @@ body {
 }
 
 h3 {
+}
+
+.stacked-btn {
+	margin-bottom: 5px;
 }
