@@ -1,6 +1,14 @@
 <h3>Add New Album</h3>
 
+<% if flash[:notice] %>
+	<p class="flash_notice"><%= flash[:notice] %></p>
+<% end %>
+
 <%= form_for Vinyl.new do |f| %>
+
+	<%= f.label :cover, "Cover Image Link" %>
+	<%= f.text_field :cover %>
+
 	<%= f.label :artist %>
 	<%= f.text_field :artist %><br />
 

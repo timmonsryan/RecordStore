@@ -45,6 +45,6 @@ class VinylsController < ApplicationController
 
 	private
 	def vinyl_params
-		params.require(:vinyl).permit(:album, :artist, :year, :genre)
+		params.require(:vinyl).permit(:album, :artist, :year, :genre, :cover)
 	end
 end
