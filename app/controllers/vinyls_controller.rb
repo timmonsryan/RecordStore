@@ -6,6 +6,9 @@ class VinylsController < ApplicationController
 
 	def show
 		@vinyl = Vinyl.find(params[:id])
+	rescue ActiveRecord::RecordNotFound
+		flash[:notice] = "That vinyl doesn't exist."
+		redirect_to root_path
 	end
 
 	def show_artist
@@ -20,7 +23,7 @@ class VinylsController < ApplicationController
 	def create
 		@vinyl = Vinyl.new(vinyl_params)
 		if @vinyl.save
-			redirect_to vinyls_path, notice: "Vinyl added."
+			redirect_to vinyls_path, notice: "#{@vinyl.album} by #{@vinyl.artist} has been added to your collection!"
 		else
 			render 'new', notice: "Vinyl not added."
 		end
@@ -44,7 +47,7 @@ class VinylsController < ApplicationController
 	end
 
 	private
-	def vinyl_params
-		params.require(:vinyl).permit(:album, :artist, :year, :genre, :cover)
-	end
+		def vinyl_params
+			params.require(:vinyl).permit(:album, :artist, :year, :genre, :cover)
+		end
 end

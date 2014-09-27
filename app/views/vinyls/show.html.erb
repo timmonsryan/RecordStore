@@ -1,6 +1,6 @@
 <h3>Vinyl Details</h3>
 
-<% if @vinyl.cover %>
+<% if @vinyl.cover.present? %>
 	<div id="AlbumCoverImage">
 		<%= image_tag @vinyl.cover %>
 	</div>

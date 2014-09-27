@@ -27,11 +27,6 @@ $contentWidth: 600px;
 	margin: 5px 5px;
 }
 
-h1:hover {
-	text-decoration: none;
-	color: white;
-}
-
 h1 {
 
 	a {
@@ -64,6 +59,7 @@ body {
 }
 
 h3 {
+	margin: 0 auto 0;
 }
 
 .stacked-btn {
@@ -82,16 +78,17 @@ h3 {
 }
 
 .flash_notice {
-	border: 2px solid blue;
-	color: blue;
-	width: 100px;
+	color: #08C434;
+	width: 100%;
 	text-align: center;
 	display: block;
+	margin: 0 auto 5px;
 }
 
 #content {
 	width: $contentWidth;
 	margin: 0 auto 0;
+	text-align: center;
 }
 
 #header-wrap {
@@ -136,7 +133,7 @@ h3 {
 #nav-top {
 	float: right;
 	display: inline;
-	width: 150px;
+	width: 350px;
 	margin: 0;
 
 	li {
@@ -158,4 +155,11 @@ h3 {
 #content {
 	clear: both;
 	text-align: center;
+	background-color: #F0EFEF;
+	margin: 0 auto 0;
+	padding-bottom: 25px;
+}
+
+#HomeMessage {
+	padding-top: 25px;
 }

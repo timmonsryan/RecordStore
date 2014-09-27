@@ -6,16 +6,19 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 	<div id="header-wrap">
 		<div id="header-elements">
-			<h1 id="logo"><%= link_to "RecordStore", root_path %></h1>
+			<h1 id="logo"><%= link_to "RecordStore", vinyls_path %></h1>
 			<ul id="nav-top">
-				<li><%= link_to "About", "#" %></li>
+				<li><%= link_to "Contact", contact_path %></li>
 				<li> | </li>
-				<li><%= link_to "Contact", "#" %></li>
+				<li><%= link_to "About", about_path %></li>
+				<li> | </li>
+				<li><%= link_to "Home", home_path %></li>
 			</ul>
 		</div>
 	</div>
