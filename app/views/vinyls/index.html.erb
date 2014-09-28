@@ -10,7 +10,7 @@
 	<% Vinyl.all.order(:artist, :album).each do |v| %>
 		<div id="VinylRow">
 			<div id="VinylInfo">
-				<%= link_to v.artist + " - " + v.album, vinyl_path(v) %>
+				<%= link_to "#{v.artist} - #{v.album}".truncate(40), vinyl_path(v) %>
 			</div>
 			<div id="VinylActions">
 			<%= link_to (image_tag 'edit.png', width: 15, height: 15, alt: 'edit'), edit_vinyl_path(v) %>

@@ -33,7 +33,7 @@
 		padding: 0;
 		margin: 0;
 	}
-	h2, h6, p, a {
+	h2, h6, p {
 		width: 450px;
 		display: inline-block;
 		margin: 0;
@@ -44,4 +44,10 @@
 	h6 {
 		margin-top: -5px;
 	}
+}
+
+#VinylCollection {
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
+	padding: 5px 0;
 }
