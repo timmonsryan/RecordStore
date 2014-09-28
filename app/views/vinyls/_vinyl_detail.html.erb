@@ -1,0 +1,10 @@
+<div class="VinylDetail">
+	<%= image_tag vinyl.cover %>
+	<h2><%= vinyl.album %></h2>
+	<br/>
+	<h6>&emsp;<%= vinyl.artist %></h6>
+	<p>Genre: <%= vinyl.genre %></p>
+	<p>Released: <%= vinyl.year %></p>
+	<%= link_to "Edit", edit_vinyl_path(vinyl) %>
+	<%= link_to "View", vinyl_path(vinyl) %>
+</div>

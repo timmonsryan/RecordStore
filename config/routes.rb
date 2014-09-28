@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/about', to: 'static_pages#about'
   get '/contact', to: 'static_pages#contact'
   resources :vinyls
+  get '/vinyls_detail', to: 'vinyls#detail'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

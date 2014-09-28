@@ -1,9 +1,10 @@
-<h3>Vinyl Collection</h3>
-<h5 id="VinylCount"><%= Vinyl.all.count %> Records and Counting!</h5>
+<%= render 'vinyl_header' %>
 
-<% if flash[:notice] %>
-	<p class="flash_notice"><%= flash[:notice] %></p>
-<% end %>
+<div id="VinylViewSelect">
+	<p class="VinylView">List View</p>
+	<p>&nbsp|&nbsp</p>
+	<p class="VinylView"><%= link_to "Detail View", vinyls_detail_path %></p>
+</div>
 
 <div id="VinylCollection">
 	<% Vinyl.all.order(:artist, :album).each do |v| %>

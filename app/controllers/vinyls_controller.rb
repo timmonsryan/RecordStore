@@ -46,6 +46,10 @@ class VinylsController < ApplicationController
 		redirect_to vinyls_path
 	end
 
+	def detail
+		@vinyls = Vinyl.all
+	end
+
 	private
 		def vinyl_params
 			params.require(:vinyl).permit(:album, :artist, :year, :genre, :cover)

@@ -1,0 +1,13 @@
+<%= render 'vinyl_header' %>
+
+<div id="VinylViewSelect">
+	<p class="VinylView"><%= link_to "List View", vinyls_path %></p>
+	<p>&nbsp|&nbsp</p>
+	<p class="VinylView">Detail View</p>
+</div>
+
+
+<% Vinyl.all.order(:album).each do |v| %>
+	<%= render 'vinyl_detail', vinyl: v %>
+<% end %>
+
