@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
 gem 'pg', '0.15.1'
-gem 'rspec', '~> 3.1.0'
+gem 'capybara'
 gem "therubyracer"
 gem "twitter-bootstrap-rails"
 
@@ -43,4 +43,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 group :production do
 	gem 'rails_12factor'
+end
+
+group :development, :test do
+  gem 'rspec-rails'
 end
