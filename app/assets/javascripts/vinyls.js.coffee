@@ -8,3 +8,6 @@ jQuery(document).ready ->
 	$('.BottomLink').hide()
 	$('#VinylCollection').slideDown(1000, ->
 		$('.BottomLink').fadeIn(400))
+
+$('.delete_vinyl').bind 'ajax:success', ->
+	$(event.target).parent().parent().fadeOut(1000)

@@ -42,8 +42,12 @@ class VinylsController < ApplicationController
 	def destroy
 		@vinyl = Vinyl.find(params[:id])
 		@vinyl.destroy
-		flash.now[:success] = "Vinyl has been destroyed."
-		redirect_to vinyls_path
+
+		respond_to do |format|
+			format.html { flash.now[:success] = "Vinyl has been destroyed."
+							redirect_to vinyls_path }
+			format.js {render nothing: true }
+		end
 	end
 
 	def detail
