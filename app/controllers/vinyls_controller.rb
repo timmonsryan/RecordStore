@@ -33,7 +33,7 @@ class VinylsController < ApplicationController
 		@vinyl = Vinyl.find(params[:id])
 	end
 
-	def update
+	def update_attributes
 		@vinyl = Vinyl.find(params[:id])
 		@vinyl.update_attributes(vinyl_params)
 		redirect_to vinyls_path

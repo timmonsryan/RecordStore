@@ -6,5 +6,5 @@
 	<p>Genre: <%= vinyl.genre %></p>
 	<p>Released: <%= vinyl.year %></p>
 	<p><%= link_to "Edit", edit_vinyl_path(vinyl) %> | <%= link_to "View", vinyl_path(vinyl) %></p>
-	<p><%= link_to "Delete", vinyl, confirm: "Are you sure?", method: :delete, remote: true, class: "delete_vinyl" %></p>
+	<p><%= link_to "Delete", vinyl, method: :delete, data: { confirm: "Are you sure?" } %></p>
 </div>

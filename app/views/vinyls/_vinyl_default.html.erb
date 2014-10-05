@@ -1,0 +1,9 @@
+<div id="VinylRow">
+	<div id="VinylInfo">
+		<%= link_to "#{vinyl.artist} - #{vinyl.album}".truncate(40), vinyl_path(vinyl) %>
+	</div>
+	<div id="VinylActions">
+	<%= link_to (image_tag 'edit.png', width: 15, height: 15, alt: 'edit'), edit_vinyl_path(vinyl) %>
+	<%= link_to (image_tag 'delete.png', width: 15, height: 15, alt: 'delete'), vinyl, method: :delete, data: { confirm: 'Are you sure?' } %>
+	</div>
+</div>
