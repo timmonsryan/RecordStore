@@ -3,7 +3,7 @@ class VinylsController < ApplicationController
 	def index
 		if session[:user_id]
 			user = User.find(session[:user_id])
-			@vinyls = user.vinyls.order(:album)
+			@vinyls = user.vinyls.order(:artist)
 		else
 			redirect_to signin_path
 			flash[:notice] = "Please sign in to view collection."

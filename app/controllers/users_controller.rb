@@ -50,7 +50,12 @@ class UsersController < ApplicationController
       @user.vinyls.create(cover: 'http://cdn.stereogum.com/files/2010/12/Agalloch-Marrow-Of-The-Spirit.jpg',
              artist: 'Agalloch',
              album: 'Marrow of the Spirit',
-             genre: 'Black Metal',
+             genre: 'Metal',
              year: 2010)
+      @user.vinyls.create(cover: 'http://ecx.images-amazon.com/images/I/51UNQaxNmFL._SL500_AA280_.jpg',
+             artist: 'The Hecklers',
+             album: 'Dew on the Grass in the Morning',
+             genre: 'Rock',
+             year: 2014)
     end
 end
