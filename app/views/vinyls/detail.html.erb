@@ -6,9 +6,13 @@
 	<p class="VinylView">Detail View</p>
 </div>
 
-
-<% Vinyl.all.order(:album).each do |v| %>
-	<%= render 'vinyl_detail', vinyl: v %>
+<% if @vinyls %>
+	<% @vinyls.each do |v| %>
+		<%= render 'vinyl_detail', vinyl: v %>
+	<% end %>
+<% else %>
+	<h4>You currently have no albums.</h4>
+	<h4>Get cracking and add some!</h4>
 <% end %>
 
 <br/>

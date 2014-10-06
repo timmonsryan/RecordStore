@@ -1,7 +1,13 @@
 class VinylsController < ApplicationController
 
 	def index
-		@vinyls = Vinyl.all
+		if session[:user_id]
+			user = User.find(session[:user_id])
+			@vinyls = user.vinyls.order(:album)
+		else
+			redirect_to signin_path
+			flash[:notice] = "Please sign in."
+		end
 	end
 
 	def show
@@ -22,6 +28,7 @@ class VinylsController < ApplicationController
 
 	def create
 		@vinyl = Vinyl.new(vinyl_params)
+		@vinyl.user_id = current_user.id
 		if @vinyl.save
 			redirect_to vinyls_path, notice: "#{@vinyl.album} by #{@vinyl.artist} has been added to your collection!"
 		else
@@ -42,20 +49,28 @@ class VinylsController < ApplicationController
 	def destroy
 		@vinyl = Vinyl.find(params[:id])
 		@vinyl.destroy
+		flash[:notice] = "Vinyl has been destroyed."
 
 		respond_to do |format|
-			format.html { flash.now[:success] = "Vinyl has been destroyed."
-							redirect_to vinyls_path }
-			format.js {render nothing: true }
+			format.html { redirect_to vinyls_path }
 		end
 	end
 
 	def detail
-		@vinyls = Vinyl.all
+		if session[:user_id]
+			user = User.find(session[:user_id])
+			@vinyls = user.vinyls.order(:album)
+		else
+			@vinyls = nil
+		end
 	end
 
 	private
 		def vinyl_params
 			params.require(:vinyl).permit(:album, :artist, :year, :genre, :cover)
+		end
+
+		def current_user
+			User.find(session[:user_id])
 		end
 end

@@ -1,6 +1,6 @@
 <h3>Vinyl Collection</h3>
-<h5 id="VinylCount"><%= Vinyl.all.count %> Records and Counting!</h5>
-
-<% if flash[:notice] %>
-	<p class="flash_notice"><%= flash[:notice] %></p>
+<% if @vinyls %>
+	<h5 id="VinylCount"><%= @vinyls.count %> Records and Counting!</h5>
 <% end %>
+
+<%= render 'shared/error_messages' %>

@@ -6,12 +6,18 @@
 	<p class="VinylView"><%= link_to "Detail View", vinyls_detail_path %></p>
 </div>
 
-<div id="VinylCollection">
-	<% Vinyl.all.order(:artist, :album).each do |vinyl| %>
-		<%= render 'vinyl_default', vinyl: vinyl %>
-	<br/>
-	<% end %>
-</div>
+<% if @vinyls %>
+	<div id="VinylCollection">
+		<% @vinyls.each do |vinyl| %>
+			<%= render 'vinyl_default', vinyl: vinyl %>
+		<br/>
+		<% end %>
+	</div>
+<% else %>
+	<h4>You currently have no albums.</h4>
+	<h4>Get cracking and add some!</h4>
+<% end %>
+
 <br/>
 <div class="BottomLink">
 	<%= link_to "Add Vinyl", new_vinyl_path, class: "btn btn-danger" %>

@@ -1,5 +1,7 @@
 <h3>Vinyl Details</h3>
 
+<%= render 'shared/error_messages' %>
+
 <% if @vinyl.cover.present? %>
 	<div id="AlbumCoverImage">
 		<%= image_tag @vinyl.cover %>

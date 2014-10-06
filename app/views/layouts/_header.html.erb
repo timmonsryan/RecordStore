@@ -1,0 +1,16 @@
+<div id="header-wrap">
+	<div id="header-elements">
+		<h1 id="logo"><%= link_to "RecordStore", vinyls_path %></h1>
+		<ul id="nav-top">
+			<% if signed_in? %>
+				<li><%= link_to "Sign Out", signout_path %></li>
+			<% else %>
+				<li><%= link_to "Sign In", signin_path %></li>
+			<% end %>
+			<li> | </li>
+			<li><%= link_to "About", about_path %></li>
+			<li> | </li>
+			<li><%= link_to "Home", home_path %></li>
+		</ul>
+	</div>
+</div>
