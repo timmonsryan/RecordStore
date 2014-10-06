@@ -1,7 +1,6 @@
 class VinylsController < ApplicationController
 
 	def index
-		redirect_to vinyls_detail_path if session[:index_preference] == "detail"
 		if session[:user_id]
 			user = User.find(session[:user_id])
 			@vinyls = user.vinyls.order(:album)

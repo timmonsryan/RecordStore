@@ -10,7 +10,11 @@
 			<li> | </li>
 			<li><%= link_to "About", about_path %></li>
 			<li> | </li>
-			<li><%= link_to "Collection", vinyls_path %></li>
+			<% if session[:index_preference] == "detail" %>
+				<li><%= link_to "Collection", vinyls_detail_path %></li>
+			<% else %>
+				<li><%= link_to "Collection", vinyls_path %></li>
+			<% end %>
 		</ul>
 	</div>
 </div>
