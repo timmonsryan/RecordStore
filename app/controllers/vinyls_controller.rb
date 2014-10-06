@@ -6,7 +6,7 @@ class VinylsController < ApplicationController
 			@vinyls = user.vinyls.order(:album)
 		else
 			redirect_to signin_path
-			flash[:notice] = "Please sign in."
+			flash[:notice] = "Please sign in to view collection."
 		end
 	end
 
@@ -66,7 +66,8 @@ class VinylsController < ApplicationController
 			user = User.find(session[:user_id])
 			@vinyls = user.vinyls.order(:album)
 		else
-			@vinyls = nil
+			redirect_to signin_path
+			flash[:notice] = "Please sign in to view collection."
 		end
 	end
 
