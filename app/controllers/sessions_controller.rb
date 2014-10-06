@@ -8,8 +8,8 @@ class SessionsController < ApplicationController
   		session[:user_id] = user.id
   		redirect_to vinyls_path
   	else
-  		render signin_path
   		flash.now[:error] = "Invalid Sign-In"
+      render new_session_path
   	end
   end
 
