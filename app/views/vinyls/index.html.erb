@@ -3,10 +3,10 @@
 <div id="VinylViewSelect">
 	<p class="VinylView">List View</p>
 	<p>&nbsp|&nbsp</p>
-	<p class="VinylView"><%= link_to "Detail View", vinyls_detail_path %></p>
+	<p class="VinylView"><%= link_to "Detail View", vinyl_detail_preferred_path %></p>
 </div>
 
-<% if @vinyls %>
+<% if @vinyls && @vinyls.count > 0 %>
 	<div id="VinylCollection">
 		<% @vinyls.each do |vinyl| %>
 			<%= render 'vinyl_default', vinyl: vinyl %>

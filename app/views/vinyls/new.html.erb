@@ -2,7 +2,11 @@
 
 <%= render 'shared/error_messages' %>
 
-<%= form_for Vinyl.new do |f| %>
+<% @vinyl.errors.full_messages.each do |message| %>
+	<p class="flash_error"><%= message %></p>
+<% end %>
+
+<%= form_for @vinyl do |f| %>
 
 	<%= f.label :cover, "Cover Image Link" %>
 	<%= f.text_field :cover %>

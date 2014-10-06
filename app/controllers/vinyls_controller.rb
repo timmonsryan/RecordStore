@@ -1,6 +1,7 @@
 class VinylsController < ApplicationController
 
 	def index
+		redirect_to vinyls_detail_path if session[:index_preference] == "detail"
 		if session[:user_id]
 			user = User.find(session[:user_id])
 			@vinyls = user.vinyls.order(:album)
@@ -30,17 +31,21 @@ class VinylsController < ApplicationController
 		@vinyl = Vinyl.new(vinyl_params)
 		@vinyl.user_id = current_user.id
 		if @vinyl.save
-			redirect_to vinyls_path, notice: "#{@vinyl.album} by #{@vinyl.artist} has been added to your collection!"
+			redirect_to vinyls_path, notice: "'#{@vinyl.album}' by #{@vinyl.artist} has been added to your collection!"
 		else
-			render 'new', notice: "Vinyl not added."
+			render new_vinyl_path, notice: "Vinyl not added."
 		end
 	end
 
 	def edit
 		@vinyl = Vinyl.find(params[:id])
+		unless @vinyl.user == current_user && @vinyl.user
+			flash[:error] = "You cannot edit albums that are not yours."
+			redirect_to vinyls_path
+		end 
 	end
 
-	def update_attributes
+	def update
 		@vinyl = Vinyl.find(params[:id])
 		@vinyl.update_attributes(vinyl_params)
 		redirect_to vinyls_path
@@ -48,12 +53,13 @@ class VinylsController < ApplicationController
 
 	def destroy
 		@vinyl = Vinyl.find(params[:id])
-		@vinyl.destroy
-		flash[:notice] = "Vinyl has been destroyed."
-
-		respond_to do |format|
-			format.html { redirect_to vinyls_path }
+		if @vinyl.user == current_user
+			@vinyl.destroy
+			flash[:notice] = "'#{@vinyl.album}' by #{@vinyl.artist} has been removed."
+		else
+			flash[:error] = "You cannot delete albums that are not yours."
 		end
+		redirect_to vinyls_path
 	end
 
 	def detail
@@ -65,12 +71,22 @@ class VinylsController < ApplicationController
 		end
 	end
 
+	def list_preferred
+		session[:index_preference] = "list"
+		redirect_to vinyls_path
+	end
+
+	def detail_preferred
+		session[:index_preference] = "detail"
+		redirect_to vinyls_detail_path
+	end
+
 	private
 		def vinyl_params
 			params.require(:vinyl).permit(:album, :artist, :year, :genre, :cover)
 		end
 
 		def current_user
-			User.find(session[:user_id])
+			User.find(session[:user_id]) if session[:user_id]
 		end
 end

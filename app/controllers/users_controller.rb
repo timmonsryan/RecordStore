@@ -5,7 +5,8 @@ class UsersController < ApplicationController
 
   def create
   	@user = User.create(user_params)
-  	flash[:success] = "You have registered for RecordStore.  Welcome!"
+  	flash[:success] = "You have registered for RecordStore!"
+    session[:user_id] = @user.id
   	redirect_to home_path
   end
 

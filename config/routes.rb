@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get '/about', to: 'static_pages#about'
   get '/contact', to: 'static_pages#contact'
   resources :vinyls
+  get '/vinyl_detail_preferred', to: 'vinyls#detail_preferred'
+  get '/vinyl_list_preferred', to: 'vinyls#list_preferred'
   get '/vinyls_detail', to: 'vinyls#detail'
 
   # The priority is based upon order of creation: first created -> highest priority.

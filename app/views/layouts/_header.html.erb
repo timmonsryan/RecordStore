@@ -1,6 +1,6 @@
 <div id="header-wrap">
 	<div id="header-elements">
-		<h1 id="logo"><%= link_to "RecordStore", vinyls_path %></h1>
+		<h1 id="logo"><%= link_to "RecordStore", root_path %></h1>
 		<ul id="nav-top">
 			<% if signed_in? %>
 				<li><%= link_to "Sign Out", signout_path %></li>
@@ -10,7 +10,7 @@
 			<li> | </li>
 			<li><%= link_to "About", about_path %></li>
 			<li> | </li>
-			<li><%= link_to "Home", home_path %></li>
+			<li><%= link_to "Collection", vinyls_path %></li>
 		</ul>
 	</div>
 </div>
